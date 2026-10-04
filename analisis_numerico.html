@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>analisis numerico</title>
+    <link rel="stylesheet" href="analisis_numerico.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="analisis_numerico.js" defer></script>
+</head>
+<body>
+    <!-------------------------------------->
+    <!--|estructuracion_analisis_numerico|-->
+    <!-------------------------------------->
+    <header class="encabezado">
+        <h1>Análisis numérico</h1>
+        <p>
+            Escribe una lista de números y JavaScript calcula tres valores:
+            la media, la mediana y la desviación estándar.
+        </p>
+    </header>
+    <!-- Contenido principal: cuadrícula con los paneles -->
+    <main class="tablero">
+        <!-- Panel 1: entrada de datos -->
+        <section class="panel" aria-labelledby="titulo-datos">
+            <h2 id="titulo-datos">Tus datos</h2>
+            <!-- Etiqueta asociada al campo de texto -->
+            <label for="numeros">Números separados por comas o espacios</label>
+            <!-- Campo donde se escriben los números; su contenido se guarda en localStorage -->
+            <textarea id="numeros" rows="5" placeholder="Ejemplo: 12, 15, 9, 22, 18" spellcheck="false"></textarea>
+            <!-- Ayuda sobre el formato de los decimales -->
+            <p class="ayuda">Usa punto para los decimales, por ejemplo 3.5.</p>
+            <!-- Botones de acción -->
+            <div class="acciones">
+                <!-- Calcula los tres valores con los datos escritos -->
+                <button type="button" id="calcular" class="primario">Calcular</button>
+                <!-- Rellena el campo con una lista de ejemplo -->
+                <button type="button" id="ejemplo">Usar ejemplo</button>
+                <!-- Borra los datos escritos y los resultados -->
+                <button type="button" id="limpiar">Borrar datos</button>
+            </div>
+            <!-- Mensajes de estado o de error (los escribe JavaScript) -->
+            <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+        </section>
+        <!-- Panel 2: los tres valores calculados -->
+        <section class="panel" aria-labelledby="titulo-resultados">
+            <h2 id="titulo-resultados">Resultados</h2>
+            <div class="resultados">
+                <!-- Valor 1: media aritmética -->
+                <article class="valor">
+                    <h3>Media</h3>
+                    <output id="media">—</output>
+                    <p>La suma de los datos dividida entre su cantidad.</p>
+                </article>
+                <!-- Valor 2: mediana -->
+                <article class="valor">
+                    <h3>Mediana</h3>
+                    <output id="mediana">—</output>
+                    <p>El valor que queda en el centro al ordenar los datos.</p>
+                </article>
+                <!-- Valor 3: desviación estándar -->
+                <article class="valor">
+                    <h3>Desviación estándar</h3>
+                    <output id="desviacion">—</output>
+                    <p>Qué tan lejos están los datos de la media, en promedio.</p>
+                </article>
+            </div>
+        </section>
+        <!-- Panel 3: gráfica de barras (las barras las crea JavaScript) -->
+        <section class="panel ancho" aria-labelledby="titulo-grafica">
+            <h2 id="titulo-grafica">Tus números en barras</h2>
+            <div id="barras" class="barras" role="img" aria-label="Gráfica de barras con los números ingresados"></div>
+        </section>
+        <!-- Panel 4: fórmulas usadas -->
+        <section class="panel ancho" aria-labelledby="titulo-formulas">
+            <h2 id="titulo-formulas">Cómo se calcula</h2>
+            <!-- Lista de definiciones: nombre del valor y su fórmula -->
+            <dl class="formulas">
+                <dt>Media</dt>
+                <dd>suma de los datos / cantidad de datos</dd>
+                <dt>Mediana</dt>
+                <dd>dato central, o promedio de los dos centrales si la cantidad es par</dd>
+                <dt>Desviación</dt>
+                <dd>raíz cuadrada de la media de (dato - media)²</dd>
+            </dl>
+        </section>
+    </main>
+</body>
+</html>
